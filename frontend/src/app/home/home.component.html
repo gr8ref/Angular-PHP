@@ -1,0 +1,18 @@
+<div class="flex flex-col w-full h-full" *ngFor="let user of this.resolverService.userData">
+    <div class="py-5">
+        <h1>Welcome {{user.firstName}}</h1>
+    </div>
+    <b>First Name: </b>
+    <p> {{user.firstName}}</p>
+    <b>Last Name: </b>
+    <p> {{user.lastName}}</p>
+    <b>Address: </b>
+    <p> {{user.address}}</p>
+    <b>Zip: </b>
+    <p> {{user.zip}}</p>
+    <b>City: </b>
+    <p> {{user.city}}</p>
+    <button type="button" class="btn btn-primary" [routerLink]="['/edit/', user.id]">Edit</button>
+ </div>
+
+

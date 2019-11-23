@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light flex-row justify-content-between"
+     [hidden]="!this.resolverService.showHeader()">
+    <a class="navbar-brand" href="/home">{{title}}</a>
+    <div class="d-flex flex-row">
+        <button type="button" class="btn btn-primary mr-1" (click)="this.resolverService.openPage('/home')">Home
+        </button>
+        <button type="button" class="btn btn-primary mr-1" (click)="this.resolverService.openPage('/users')">Users
+        </button>
+        <button type="button" class="btn btn-primary mr-1" (click)="this.resolverService.openPage('/users')">Add User
+        </button>
+        <button type="button" class="btn btn-primary mr-1" (click)="this.resolverService.logout()">Logout</button>
+    </div>
+</nav>
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

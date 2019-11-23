@@ -1,0 +1,35 @@
+<div class="table-responsive">
+    <h3>All registered users:</h3>
+
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Postal code</th>
+            <th scope="col">City</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+            <th scope="row">{{ user.id }}</th>
+            <th>{{ user.username }}</th>
+            <th>{{ user.password }}</th>
+            <th>{{ user.firstName }}</th>
+            <th>{{ user.lastName }}</th>
+            <th>{{ user.address }}</th>
+            <th>{{ user.zip }}</th>
+            <th>{{ user.city }}</th>
+
+            <th>
+                <button (click)="deleteUsers(user.id)">Delete</button>
+                <button [routerLink]="['/edit/', {id: user.id}]">Edit</button>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>
